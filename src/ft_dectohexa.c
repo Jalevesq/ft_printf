@@ -28,22 +28,24 @@ char	*ft_dectohexa(int n, int fd)
 {
 	char *ret;
 	int i;
+	int remainder;
+	int quotient;
 
 	i = 0;
 	ret = malloc(sizeof(char) * ft_countint(n));
 	if (!ret)
 		return (NULL);
-	while (n)
+	quotient = n;
+	while (quotient != 0)
 	{
-		if (n > 16)
-		{
-			ret = n /= 16;
-			ret = n %= 16;
-			
-		}
-		if (n < 16)
+		remainder = quotient % 16;
+		if (remainder<10)
+			ret[i++] = 48 + remainder;
+		else
+			ret[i++] = 55 + remainder;
+		quotient = quotient / 16;
 	}
-	
+	return (ret);
 }
 
 #include <stdio.h>
