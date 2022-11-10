@@ -1,37 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_dectohexa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 12:45:04 by jalevesq          #+#    #+#             */
-/*   Updated: 2022/11/09 16:43:07 by jalevesq         ###   ########.fr       */
+/*   Created: 2022/11/10 11:19:06 by jalevesq          #+#    #+#             */
+/*   Updated: 2022/11/10 15:43:35 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../printf.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int ft_countint(int n)
 {
-	if (n == -2147483648)
+	int count;
+	
+	count++;
+	while (n)
 	{
-		ft_putchar('-');
-		ft_putchar('2');
-		n = 147483648;
+		count++;
+		n /= 10;
 	}
-	if (n < 0)
+}
+
+char	*ft_dectohexa(int n, int fd)
+{
+	char *ret;
+	int i;
+
+	i = 0;
+	ret = malloc(sizeof(char) * ft_countint(n));
+	if (!ret)
+		return (NULL);
+	while (n)
 	{
-		ft_putchar('-');
-		n *= -1;
+		if (n > 16)
+		{
+			ret = n /= 16;
+			ret = n %= 16;
+			
+		}
+		if (n < 16)
 	}
-	if (n >= 10)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
-	}
-	else
-	{
-		ft_putchar(n + 48);
-	}
+	
+}
+
+#include <stdio.h>
+int main(void)
+{
+	int i = 23;
+	printf("%s", ft_dectohexa(i, 1));
 }
