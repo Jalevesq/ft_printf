@@ -18,6 +18,8 @@ SRCS = ft_printf.c \
 	src/ft_putstr.c \
 	src/ft_strlen.c \
 	src/ft_putnbr_fd.c \
+	src/ft_puthexa.c \
+	src/ft_dectohexa.c \
 
 CC=gcc
 CFLAGS=-Wall -Werror -Wextra

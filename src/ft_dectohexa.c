@@ -16,41 +16,33 @@ int ft_countint(int n)
 {
 	int count;
 	
-	count++;
+	count = 0;
 	while (n)
 	{
 		count++;
 		n /= 10;
 	}
+	return (count);
 }
 
-char	*ft_dectohexa(int n, int fd)
+char	*ft_dectohexa(int n)
 {
 	char *ret;
 	int i;
 	int remainder;
-	int quotient;
 
 	i = 0;
 	ret = malloc(sizeof(char) * ft_countint(n));
 	if (!ret)
 		return (NULL);
-	quotient = n;
-	while (quotient != 0)
+	while (n != 0)
 	{
-		remainder = quotient % 16;
+		remainder = n % 16;
 		if (remainder<10)
 			ret[i++] = 48 + remainder;
 		else
 			ret[i++] = 55 + remainder;
-		quotient = quotient / 16;
+		n = n / 16;
 	}
 	return (ret);
-}
-
-#include <stdio.h>
-int main(void)
-{
-	int i = 23;
-	printf("%s", ft_dectohexa(i, 1));
-}
+}	

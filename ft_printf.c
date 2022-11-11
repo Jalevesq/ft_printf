@@ -14,9 +14,6 @@
 
 int ft_printf(const char *print, ...)
 {
-	int *i;
-
-	i = 0;
 	va_list ap;
 	va_start(ap, print);
 	while (*print)
@@ -27,8 +24,8 @@ int ft_printf(const char *print, ...)
 			ft_putstr(va_arg(ap, char *));
 		else if (ft_memcmp(print, "%d", 2) == 0 || ft_memcmp(print, "%i", 2 == 0))
 			ft_putnbr_fd(va_arg(ap, int), 1);
-		// else if (ft_memcmp(print, "%x", 2) == 0)
-		// 	ft_putstr(ft_dectohexa(va_arg(ap, int), 1));
+		else if (ft_memcmp(print, "%x", 2) == 0)
+		 	ft_puthexa(ft_dectohexa(va_arg(ap, int)));
 		else if ((ft_memcmp(print, "%%", 2) == 0))
 		{
 			ft_putchar(*print++);
@@ -42,7 +39,7 @@ int ft_printf(const char *print, ...)
 
 int main(void)
 {
-	ft_printf("%s %%d", "Test", 100);
+	ft_printf("%s %x\n", "Test", 15347684);
 }
 
-// gccf ft_printf.c src/ft_memcmp.c src/ft_putchar.c src/ft_putstr.c src/ft_strlen.c src/ft_putnbr_fd.c
+// gccf ft_printf.c src/ft_memcmp.c src/ft_putchar.c src/ft_putstr.c src/ft_strlen.c src/ft_putnbr_fd.c src/ft_dectohexa.c
