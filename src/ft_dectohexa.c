@@ -25,7 +25,7 @@ int ft_countint(int n)
 	return (count);
 }
 
-char	*ft_dectohexa(int n)
+char	*ft_dectohexa(int n, int j)
 {
 	char *ret;
 	int i;
@@ -40,8 +40,13 @@ char	*ft_dectohexa(int n)
 		remainder = n % 16;
 		if (remainder<10)
 			ret[i++] = 48 + remainder;
-		else
-			ret[i++] = 55 + remainder;
+		if (remainder>10)
+		{
+			if (j == 0)
+				ret[i++] = 55 + remainder;
+			if (j == 1)
+				ret[i++] = 87 + remainder;
+		}
 		n = n / 16;
 	}
 	return (ret);

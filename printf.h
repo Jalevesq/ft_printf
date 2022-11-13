@@ -23,8 +23,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr(char *s);
 size_t	ft_strlen(const char *c);
-char	*ft_dectohexa(int n);
+char	*ft_dectohexa(int n, int j);
 void    ft_puthexa(char *s);
-char    *ft_dectohexa(int n);
 
 #endif
