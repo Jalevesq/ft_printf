@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int ft_printf(const char *print, ...)
 {
@@ -36,12 +36,7 @@ int ft_printf(const char *print, ...)
 		print++;
 	}
 	va_end (ap);
-	return (1); // Doit return la length du output
-}
-
-int main(void)
-{
-	ft_printf("%x\n", 1325);
+	return (1); // Doit return la length du output. Faire une struct qui i++ chaque putchar? 
 }
 
 // gccf ft_printf.c src/ft_memcmp.c src/ft_putchar.c src/ft_putstr.c src/ft_strlen.c src/ft_putnbr_fd.c src/ft_dectohexa.c
