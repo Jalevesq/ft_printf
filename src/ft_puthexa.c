@@ -1,7 +1,7 @@
 
 #include "../ft_printf.h"
 
-void    ft_puthexa(char *s)
+void    ft_puthexa(char *s, s_count *count)
 {
         int     i;
 
@@ -10,7 +10,7 @@ void    ft_puthexa(char *s)
         {
                 while (i != -1)
                 {
-                        write(1, &s[i], 1);
+                        ft_putchar(s[i], count);
                         i--;
                 }
         }

@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 12:39:01 by jalevesq          #+#    #+#             */
-/*   Updated: 2022/11/14 11:01:19 by jalevesq         ###   ########.fr       */
+/*   Created: 2022/10/24 11:53:20 by jalevesq          #+#    #+#             */
+/*   Updated: 2022/11/14 15:20:45 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_putstr(char *s, s_count *count)
+void	*ft_memchr(const void *str, int c, size_t n)
 {
-	int	i;
+	unsigned char	*cstr;
+	unsigned char	c2;
 
-	i = 0;
-	if (s)
+	cstr = (unsigned char *)str;
+	c2 = (unsigned char)c;
+	while (n > 0)
 	{
-		while (s[i])
-		{
-			ft_putchar(s[i], count);
-			i++;
-		}
+		if (*cstr == c2)
+			return (cstr);
+		n--;
+		cstr++;
 	}
+	return (NULL);
 }

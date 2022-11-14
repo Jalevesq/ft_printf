@@ -6,7 +6,7 @@
 #    By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/09 08:52:41 by jalevesq          #+#    #+#              #
-#    Updated: 2022/11/09 12:47:22 by jalevesq         ###   ########.fr        #
+#    Updated: 2022/11/14 14:53:18 by jalevesq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,8 @@ SRCS = ft_printf.c \
 	src/ft_putnbr_fd.c \
 	src/ft_puthexa.c \
 	src/ft_dectohexa.c \
+	src/ft_memchr.c \
+	
 
 CC=gcc
 CFLAGS=-Wall -Werror -Wextra
@@ -28,7 +30,6 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs  $(NAME) $(OBJS)
-
 clean:
 	@/bin/rm -f $(OBJS)
 	

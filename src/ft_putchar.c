@@ -6,13 +6,14 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:32:40 by jalevesq          #+#    #+#             */
-/*   Updated: 2022/11/14 09:01:05 by jalevesq         ###   ########.fr       */
+/*   Updated: 2022/11/14 11:00:57 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_putchar(char c)
+void	ft_putchar(char c, s_count *count)
 {
 	write(1, &c, 1);
+	count->compt++;
 }
