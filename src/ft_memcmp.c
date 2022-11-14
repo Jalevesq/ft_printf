@@ -6,11 +6,11 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:41:19 by jalevesq          #+#    #+#             */
-/*   Updated: 2022/11/14 08:26:24 by jalevesq         ###   ########.fr       */
+/*   Updated: 2022/11/14 09:01:09 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
+#include "../ft_printf.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

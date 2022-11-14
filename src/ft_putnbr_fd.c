@@ -6,11 +6,11 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:45:04 by jalevesq          #+#    #+#             */
-/*   Updated: 2022/11/14 08:26:14 by jalevesq         ###   ########.fr       */
+/*   Updated: 2022/11/14 09:00:57 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
+#include "../ft_printf.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {

@@ -6,11 +6,11 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 11:19:06 by jalevesq          #+#    #+#             */
-/*   Updated: 2022/11/14 08:26:28 by jalevesq         ###   ########.fr       */
+/*   Updated: 2022/11/14 09:01:13 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
+#include "../ft_printf.h"
 
 int ft_countint(int n)
 {

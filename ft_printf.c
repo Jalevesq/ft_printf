@@ -6,11 +6,11 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 08:49:50 by jalevesq          #+#    #+#             */
-/*   Updated: 2022/11/14 08:25:59 by jalevesq         ###   ########.fr       */
+/*   Updated: 2022/11/14 09:00:43 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int ft_printf(const char *print, ...)
 {
@@ -28,6 +28,8 @@ int ft_printf(const char *print, ...)
 		 	ft_puthexa(ft_dectohexa(va_arg(ap, int), 0));
 		else if (ft_memcmp(print, "%x", 2) == 0)
 			ft_puthexa(ft_dectohexa(va_arg(ap, int), 1));
+		// else if (ft_memcmp(print, "%u", 2) == 0)
+		// 	ft_putnbr_fd()
 		else if ((ft_memcmp(print, "%%", 2) == 0))
 		{
 			ft_putchar(*print++);
