@@ -6,11 +6,11 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 08:49:50 by jalevesq          #+#    #+#             */
-/*   Updated: 2022/11/10 15:45:38 by jalevesq         ###   ########.fr       */
+/*   Updated: 2022/11/14 08:25:59 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf.h"
 
 int ft_printf(const char *print, ...)
 {

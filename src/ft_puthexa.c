@@ -1,5 +1,5 @@
 
-#include "../ft_printf.h"
+#include "../printf.h"
 
 void    ft_puthexa(char *s)
 {
