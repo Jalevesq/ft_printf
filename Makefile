@@ -6,7 +6,7 @@
 #    By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/09 08:52:41 by jalevesq          #+#    #+#              #
-#    Updated: 2022/11/14 14:53:18 by jalevesq         ###   ########.fr        #
+#    Updated: 2022/11/15 13:45:06 by jalevesq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,11 +17,9 @@ SRCS = ft_printf.c \
 	src/ft_putchar.c \
 	src/ft_putstr.c \
 	src/ft_strlen.c \
-	src/ft_putnbr_fd.c \
-	src/ft_puthexa.c \
-	src/ft_dectohexa.c \
 	src/ft_memchr.c \
-	
+	src/ft_strlcpy.c \
+	src/ft_putnbr_base.c \
 
 CC=gcc
 CFLAGS=-Wall -Werror -Wextra

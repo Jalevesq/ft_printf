@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 12:39:01 by jalevesq          #+#    #+#             */
-/*   Updated: 2022/11/15 11:20:54 by jalevesq         ###   ########.fr       */
+/*   Created: 2022/10/20 08:22:59 by jalevesq          #+#    #+#             */
+/*   Updated: 2022/11/15 11:10:10 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_putstr(char *s, s_count *count)
+size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 {
-	int		i;
-	char	a[7];
+	unsigned int	i;
+	unsigned int	x;
 
 	i = 0;
-	if (!s)
+	x = ft_strlen(src);
+	if (dstsize != 0)
 	{
-		ft_strlcpy(a, "(null)", 7);
-		while (a[i])
+		while (src[i] != '\0' && i < dstsize - 1)
 		{
-			ft_putchar(a[i], count);
-			i++;
+		dest[i] = src[i];
+		i++;
 		}
+		dest[i] = '\0';
 	}
-	if (s)
-	{
-		while (s[i])
-		{
-			ft_putchar(s[i], count);
-			i++;
-		}
-	}
+	return (x);
 }

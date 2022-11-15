@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 08:49:50 by jalevesq          #+#    #+#             */
-/*   Updated: 2022/11/14 16:25:43 by jalevesq         ###   ########.fr       */
+/*   Updated: 2022/11/15 16:22:30 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,23 @@ int	ft_format(char print, va_list ap, s_count *count)
 {
 	if (print == 'c')
 		ft_putchar(va_arg(ap, int), count);
-	return (-1);
+	else if (print == 's')
+		ft_putstr(va_arg(ap, char *), count);
+	else if (print == 'd' || print == 'i')
+		ft_putnbr_base(va_arg(ap, int), "0123456789", count);
+	else if (print == 'u')
+		ft_putnbr_base(va_arg(ap, unsigned int), "0123456789", count);
+	else if (print == 'X')
+		ft_putnbr_base(va_arg(ap, unsigned int), "0123456789ABCDEF", count);
+	else if (print == 'x')
+		ft_putnbr_base(va_arg(ap, unsigned int), "0123456789abcdef", count);
+	else if (print == 'p')
+	{
+		ft_putstr("0x", count);
+		ft_putnbr_base(va_arg(ap, long), "0123456789abcdef", count);
+	}
+		
+	return (count->compt);
 }
 int ft_printf(const char *print, ...)
 {
@@ -27,9 +43,12 @@ int ft_printf(const char *print, ...)
 	count.compt = 0;
 	while (*print)
 	{
-		if (*print++ == '%')
+		if (*print == '%')
 		{
-			if (ft_memchr("cspdiuxX", *print, 8) != NULL)
+			print++;
+			if (*print == '%')
+				ft_putchar(*print, &count);
+			else if (ft_memchr("cspdiuxX", *print, 8) != NULL)
 				ft_format(*print, ap, &count);
 		}
 		else
@@ -40,9 +59,10 @@ int ft_printf(const char *print, ...)
 	return (count.compt);
 }
 
+// #include <stdio.h>
 // int main(void)
 // {
-// 	ft_printf("%c", 'a');
+// 	ft_printf("%%\n");
 // }
 
 

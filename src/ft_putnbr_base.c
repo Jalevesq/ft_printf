@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 12:45:04 by jalevesq          #+#    #+#             */
-/*   Updated: 2022/11/14 10:59:30 by jalevesq         ###   ########.fr       */
+/*   Created: 2022/11/15 12:55:05 by jalevesq          #+#    #+#             */
+/*   Updated: 2022/11/15 16:22:12 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_putnbr_fd(int n, int fd, s_count *count)
+void	ft_putnbr_base(long nb, char *base, s_count *count)
 {
-	if (n == -2147483648)
+	if (nb < 0 && ft_strlen(base) == 10)
 	{
 		ft_putchar('-', count);
-		ft_putchar('2', count);
-		n = 147483648;
+		nb *= -1;
 	}
-	if (n < 0)
+	if ((size_t)nb >= ft_strlen(base))
 	{
-		ft_putchar('-', count);
-		n *= -1;
-	}
-	if (n >= 10)
-	{
-		ft_putnbr_fd(n / 10, fd, count);
-		ft_putnbr_fd(n % 10, fd, count);
+		ft_putnbr_base(nb / ft_strlen(base), base, count);
+		ft_putnbr_base(nb % ft_strlen(base), base, count);
 	}
 	else
-	{
-		ft_putchar(n + 48, count);
-	}
+		ft_putchar(base[nb], count);
 }
+
+// #include <stdio.h>
+// int main(void)
+// {
+// 	s_count count;
+
+// 	count.compt = 0;
+// 	ft_putnbr_base(-10, "0123456789abcdef", &count);
+// }
