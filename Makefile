@@ -6,14 +6,13 @@
 #    By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/09 08:52:41 by jalevesq          #+#    #+#              #
-#    Updated: 2022/11/15 13:45:06 by jalevesq         ###   ########.fr        #
+#    Updated: 2022/11/15 16:26:07 by jalevesq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
 SRCS = ft_printf.c \
-	src/ft_memcmp.c \
 	src/ft_putchar.c \
 	src/ft_putstr.c \
 	src/ft_strlen.c \
