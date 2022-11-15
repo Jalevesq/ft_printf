@@ -6,7 +6,7 @@
 /*   By: jalevesq <jalevesq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 08:49:54 by jalevesq          #+#    #+#             */
-/*   Updated: 2022/11/15 16:33:55 by jalevesq         ###   ########.fr       */
+/*   Updated: 2022/11/15 16:46:09 by jalevesq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FT_PRINTF_H
 
 # include <unistd.h>
-# include <stdlib.h>
 # include <stdarg.h>
 
 typedef struct s_count
