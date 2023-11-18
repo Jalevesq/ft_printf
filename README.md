@@ -9,7 +9,7 @@ The `ft_printf` project is designed to introduce me to the intricacies of format
 ## Features
 
 - **Basic Specifiers:** Handle basic format specifiers such as `%c`, `%s`, `%d`, `%i`, `%u`, `%x`, `%X`, and `%p`.
-- 
+  
 ## Usage
 
 To use the `ft_printf` function, you can include the provided `ft_printf.h` header in your C program and link it with the compiled `libftprintf.a` library.
